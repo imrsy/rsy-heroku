@@ -342,10 +342,10 @@ section {
     justify-content: stretch;
 }
 .projects .project-list:hover > .project-item{
-    width: 23.3333%;
+    width: 20%;
 }
 .projects .project-list .project-item {
-    width: 25%;
+    width: 33.3333%;
     height: 100%;
     background-color: #1c1c1c;
     border: 1px dotted #e5e7cb ;
@@ -354,7 +354,7 @@ section {
     transition: width 0.5s ease;
 }
 .projects .project-list .project-item:hover {
-    width: 30% !important;
+    width: 60% !important;
     border:2px solid #e5e7cb;
 }
 .projects .project-list .project-item:hover .pj-bg{
@@ -372,14 +372,11 @@ section {
     filter: grayscale(100%);
 }
 .pj-1{
-    background-image: url(../img/pj1.jpg);
+    background-image: url(../img/p1/1.jpg);
 }
 .pj-2{
-    background-image: url(../img/pj2.jpg);
+    background-image: url(../img/p2/1.jpg);
 }
 .pj-3{
-    background-image: url(../img/pj3.jpg);
-}
-.pj-4{
-    background-image: url(../img/pj4.jpg);
+    background-image: url(../img/p3/1.jpg);
 }
