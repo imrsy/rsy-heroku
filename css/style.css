@@ -40,7 +40,7 @@ section {
     position: relative;
 }
 /* end reuseable */
-/* navbar */
+/* start navbar */
 .navbar {
     width: 100%;
     position: sticky;
@@ -50,6 +50,9 @@ section {
     justify-content: space-between;
     padding: 4rem;
     font-size: 1.6rem;
+    top: 0;
+    background-color: #483831;
+    z-index: 999;
 }
 .logo {
     fill: #fff;
@@ -109,11 +112,11 @@ section {
 .profile {
     position: relative;
     padding-top: 9rem;
-    height: 90vh;
 }
 .profile .container {
     flex-direction: row;
     display: flex;
+    height: 90vh;
 }
 .left-part {
     width: 40%;
@@ -159,8 +162,8 @@ section {
     display: flex;
 }
 .right-part .photo {
-    width: 480px;
-    height: 320px;
+    width: 48rem;
+    height: 32rem;
     background-color: #909b8b;
     z-index: 0;
     transform: translateX(25%);
@@ -168,9 +171,9 @@ section {
 .right-part .photo::after {
     content: "";
     position: absolute;
-    width: 480px;
-    height: 320px;
-    border: 5px solid #e5e7cb;
+    width: 48rem;
+    height: 32rem;
+    border: 0.5rem solid #e5e7cb;
     transform: translate(-25%, -25%);
     z-index: 99;
 }
@@ -187,7 +190,7 @@ section {
     display: flex;
     position: relative;
 }
-.timeline ul {
+.timeline .timeline-list {
     border-left: 1rem solid #909b8b;
     /* background-color: rgb(0, 0, 0,0.05); */
     margin: 10rem auto 5rem 10rem;
@@ -205,7 +208,6 @@ section {
     margin: 5rem 0;
     font-size: 4rem;
     position: relative;
-
 }
 
 .timeline .tl-item::before {
@@ -261,7 +263,7 @@ section {
     font-size: 6rem;
 }
 .skills .heading .bg-title {
-    letter-spacing: 0.5rem;
+    letter-spacing: 1rem;
     text-transform: uppercase;
     color: rgb(255, 255, 255, 0.2);
     padding: 1rem;
@@ -281,6 +283,7 @@ section {
     justify-content: center;
     align-items: center;
     padding: 1rem 20rem;
+    flex-wrap: wrap;
 }
 .skill-item {
     width: 20rem;
@@ -288,6 +291,7 @@ section {
     padding: 5rem;
     background-color: #685851;
     box-shadow: 2px 3px 6px rgb(5, 5, 5);
+    margin: 5rem;
 }
 .skill-item img {
     width: 10rem;
@@ -296,7 +300,6 @@ section {
 .skill-item .svg {
     fill: #e5e7cb;
 }
-
 /* end skills */
 
 /* start projects */
@@ -311,6 +314,7 @@ section {
     width: 100%;
     height: 100vh;
     flex-direction: row;
+    padding-top: 20rem;
 }
 .projects .heading {
     display: flex;
@@ -322,7 +326,7 @@ section {
     width: 5rem;
 }
 .projects .heading .bg-title {
-    letter-spacing: 0.5rem;
+    letter-spacing: 1rem;
     text-transform: uppercase;
     color: rgb(255, 255, 255, 0.2);
     padding: 1rem;
@@ -340,43 +344,228 @@ section {
     background-color: #fff;
     display: flex;
     justify-content: stretch;
+    margin-top: 10rem;
 }
-.projects .project-list:hover > .project-item{
+.projects .project-list:hover > .project-item {
     width: 20%;
 }
 .projects .project-list .project-item {
     width: 33.3333%;
     height: 100%;
     background-color: #1c1c1c;
-    border: 1px dotted #e5e7cb ;
+    border: 1px dotted #e5e7cb;
     overflow: hidden;
     position: relative;
     transition: width 0.5s ease;
 }
 .projects .project-list .project-item:hover {
     width: 60% !important;
-    border:2px solid #e5e7cb;
+    border: 2px solid #e5e7cb;
 }
-.projects .project-list .project-item:hover .pj-bg{
-    filter:grayscale(0);
+.projects .project-list .project-item:hover .pj-bg {
+    filter: grayscale(0);
 }
 .project-item > .pj-bg {
     position: absolute;
     width: 100%;
     height: 100%;
-    top:0;
+    top: 0;
     left: 0;
     background-size: cover;
     background-position: center center;
     /* transform: translate3d(0,0,0); ?? */
     filter: grayscale(100%);
 }
-.pj-1{
+.pj-1 {
     background-image: url(../img/p1/1.jpg);
 }
-.pj-2{
+.pj-2 {
     background-image: url(../img/p2/1.jpg);
 }
-.pj-3{
+.pj-3 {
     background-image: url(../img/p3/1.jpg);
+}
+/* end projects */
+
+/* responsive */
+
+/* ipad pro */
+@media screen and (max-width: 1024px) {
+    html {
+        font-size: 5px;
+    }
+    /* start profile */
+    .profile .container {
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+    }
+    .left-part {
+        order: 1;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        vertical-align: center;
+        height: 100%;
+        top: 30rem;
+    }
+    .left-part .intro h1.name::after {
+        content: "";
+        height: 5rem;
+        width: 5rem;
+        position: absolute;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 100%;
+        left: 0;
+        transform: translate(36.5rem, -1rem);
+    }
+    .left-part .intro p {
+        max-width: 100ch;
+        padding: 5rem 5rem 0 0;
+        margin-top: 20%;
+    }
+    .right-part {
+        width: 100%;
+        order: 2;
+        height: 100%;
+        padding: 185rem 0 65rem 0;
+    }
+    /* end profile */
+
+    /* start timeline */
+    .experiences .container {
+        height: 200vh; /* Not sure to modify*/
+        align-items: center;
+    }
+    .timeline {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .timeline .timeline-list {
+        order: 2;
+        align-self: center;
+        left: 30%;
+    }
+    .timeline .tl-item {
+        min-width: 30ch;
+        margin: 5rem 0;
+        font-size: 4rem;
+        position: relative;
+    }
+    .timeline .heading .bg-title {
+        letter-spacing: 0.5rem;
+        text-transform: uppercase;
+        color: rgb(255, 255, 255, 0.2);
+        padding: 1rem;
+        align-self: center;
+        text-align: center;
+    }
+    .timeline .heading .title {
+        position: absolute;
+        padding: 1rem;
+        transform: none;
+    }
+    /* end timeline */
+
+    /* start skills */
+    .skills {
+        height: auto;
+    }
+    .skills .heading {
+        align-items: center;
+        position: relative;
+    }
+    .skills .heading .bg-title {
+        font-size: 8rem;
+    }
+    .skills .heading .title {
+        letter-spacing: 0.8rem;
+        transform: translateY(6rem);
+    }
+
+    .skill-table {
+        height: 100%;
+        margin-top: 10rem;
+        display: flex;
+        padding: 20rem;
+        position: relative;
+        align-items: center;
+    }
+    .skill-item {
+        width: 30rem;
+        height: 30rem;
+    }
+    /* end skills */
+
+    /* start projects */
+    .projects .container {
+        height: 100%;
+        flex-direction: column;
+    }
+    .projects .heading {
+        writing-mode: horizontal-tb;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+    .projects .heading .bg-title {
+        position: relative;
+        font-size: 8rem;
+    }
+    .projects .heading .title {
+        text-orientation: upright;
+        position: absolute;
+        transform: translate(0, 5rem);
+    }
+    .projects .project-list {
+        margin-top: 20rem;
+        flex: none;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .projects .project-list .project-item {
+        width: 100%;
+        height: 33.3333%;
+        transition: height 0.5s ease;
+    }
+    .projects .project-list:hover > .project-item {
+        height: 20%;
+        width: 100%;
+    }
+    .projects .project-list .project-item:hover {
+        height: 60% !important;
+        width: 100% !important;
+    }
+}
+/* ipad */
+@media screen and (max-width: 768px){
+    body {
+        background-color: pink;
+    }
+}
+/* iphone6 7 8 plus */
+@media screen and (max-width: 414px) {
+    body {
+        background-color: blue;
+    }
+}
+/* iphoneX */
+@media screen and (max-width: 375px) and (-webkit-device-pixel-ratio: 3) {
+    body {
+        background-color: #0ff000;
+    }
+}
+/* iphone6 7 8 */
+@media screen and (max-width: 375px) and (-webkit-device-pixel-ratio: 2) {
+    body {
+        background-color: #0ff000;
+    }
+}
+/* iphone5 */
+@media screen and (max-width: 320px) {
+    body {
+        background-color: #0ff000;
+    }
 }
